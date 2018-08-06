@@ -5,11 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+using DotNet4JwtExample.Web.Auth;
+
 namespace DotNet4JwtExample
 {
     public class ValuesController : ApiController
     {
         // GET api/<controller>
+        [JwtAuthorize]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
